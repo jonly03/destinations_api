@@ -75,10 +75,10 @@ Router.put("/:id", async (req, res) => {
 
     destinations[id].photo = await getUnsplashPhoto(keyword.trim());
 
-    return res.redirect(`/destinations?id=${id}`, 302);
+    return res.send(destinations[id]);
   }
 
-  return res.redirect(`/destinations?id=${id}`, 302);
+  return res.send(destinations[id]);
 });
 
 // DELETE DATA
