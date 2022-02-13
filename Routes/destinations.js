@@ -86,7 +86,7 @@ Router.put("/:id", async (req, res) => {
 Router.delete("/:id", (req, res) => {
   delete destinations[req.params.id];
 
-  return res.redirect("/destinations", 302);
+  return res.send(destinations);
 });
 
 module.exports = Router;
