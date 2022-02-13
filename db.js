@@ -1,11 +1,6 @@
-const destinations = [
-  {
-    destination: "Eiffel Tower",
-    location: "paris_france",
-  },
-];
+const destinations = {};
 
-const cities = ["LA", "Paris"];
+const cities = [];
 
 module.exports = {
   destinations,
