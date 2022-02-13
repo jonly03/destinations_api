@@ -36,7 +36,7 @@ Router.post("/", checkRequiredFields, async (req, res) => {
   // save user input in db
   destinations[id] = newDest;
 
-  return res.redirect(`/destinations?id=${id}`);
+  return res.redirect(`/destinations?id=${id}`, 303);
 });
 
 // UPDATE DATA
@@ -75,10 +75,10 @@ Router.put("/:id", async (req, res) => {
 
     destinations[id].photo = await getUnsplashPhoto(keyword.trim());
 
-    return res.redirect(`/destinations?id=${id}`);
+    return res.redirect(`/destinations?id=${id}`, 303);
   }
 
-  return res.redirect(`/destinations?id=${id}`);
+  return res.redirect(`/destinations?id=${id}`, 303);
 });
 
 // DELETE DATA
@@ -86,7 +86,7 @@ Router.put("/:id", async (req, res) => {
 Router.delete("/:id", (req, res) => {
   delete destinations[req.params.id];
 
-  return res.redirect("/destinations");
+  return res.redirect("/destinations", 303);
 });
 
 module.exports = Router;
